@@ -8,21 +8,25 @@
     <title>Project - To do List!</title>
   </head>
   <body>
-
     <div class="container-fluid container-general m-0 p-0">
       <div class="container">
         <header>
           <h1>Project - To do List</h1>
         </header>
 
-        <div class="to-do-list-add">
-          <input type="text" class="form-control" placeholder="Type the task" id="list-add">
-          <button type="button" class="btn btn-primary">Add</button>
+        <div class="to-do-list-container">
+          <div class="to-do-list-add">
+            <input type="text" class="form-control" placeholder="Enter the task" id="list-add-input">
+            <button type="button" class="btn btn-primary" id="list-add-button">ADD</button>
+          </div>
+
+          <div class="to-do-list" id="to-do-list"></div>
         </div>
       </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/067d370e3e.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
   </body>
 </html>
