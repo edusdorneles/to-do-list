@@ -1,7 +1,7 @@
-// <-- Adicionar Task -->
+// <-- Adicionar e deletar task -->
 listBtn = document.getElementById('list-add-button');
-var counter = 0;
 
+// <-- Adicionar Task -->
 listBtn.addEventListener('click', function() {
     listInput = document.getElementById('list-add-input').value;
     
@@ -17,9 +17,8 @@ listBtn.addEventListener('click', function() {
 
         // Div principal da task e cria index para identificação da div (counter).
         var task = document.createElement('div');
-        task.classList.add('task', 'row', 'id-' + counter);
+        task.classList.add('task', 'row');
         listToDo.append(task);
-        counter++;
 
         // Div para o título da task.
         var taskTitleDiv = document.createElement('div');
@@ -47,6 +46,7 @@ listBtn.addEventListener('click', function() {
         taskBtn.classList.add('btn');
         var taskIco = document.createElement('i');
         taskIco.classList.add('far', 'fa-trash-alt');
+        taskIco.setAttribute('id', 'del-button');
         taskBtn.appendChild(taskIco);
         taskIcoDiv.appendChild(taskBtn);
 
@@ -57,5 +57,21 @@ listBtn.addEventListener('click', function() {
 
         // Append de todo conteúdo criado na div principal.
         listToDo.append(task);
+
+
+
+        // <-- Deletar Task -->
+        if (taskBtn != undefined) {
+            taskBtn.addEventListener('click', function() {
+                // Remover a task.
+                task.remove();
+                
+                // Verificando se vai ter alguma task sobrando quando deletar.
+                var taskCounter = listToDo.getElementsByTagName('div');
+                if (taskCounter.length == 0) {
+                    listToDo.style.display = 'none';
+                }
+            });
+        }
     }
 });
