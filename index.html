@@ -5,9 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="favicon.svg" />
     <title>Project - To do List!</title>
   </head>
   <body>
+
+    <script>
+      var str = 'Some very long string';
+      if(str.length > 10) str = str.substring(0,10);
+    </script>
+
     <div class="container-fluid container-general m-0 p-0">
       <div class="container">
         <header>
@@ -21,6 +28,9 @@
           </div>
 
           <div class="to-do-list" id="to-do-list"></div>
+
+          <!-- Ver mais - Modal -->
+          <div class="more-modal"></div>
         </div>
       </div>
     </div>
