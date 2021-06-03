@@ -1,7 +1,7 @@
-# to-do-list
-Uma lista de tarefas, para demonstrar um pouco do meu conhecimento com Javascript.
+# To Do List
+- Uma lista de afazeres, feita com Javascript puro.
 <img src="https://i.imgur.com/9u5yDli.png">
 
-# read-more-update
-Atualização da adição do botão "ler mais".
+### Update - Ler Mais:
+- Atualização da adição do botão "ler mais".
 <img src="https://i.imgur.com/WfYgon7.gif">
