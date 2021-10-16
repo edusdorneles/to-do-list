@@ -1,19 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { createTheme } from '@material-ui/core';
 
 export const AuthContext = React.createContext({});
 
 export const AuthProvider = (props) => {
+    // Temas
     const [lightMode, setLightMode] = useState(false);
-
     const theme = createTheme({
         palette: {
-            type: lightMode ? 'light' : 'dark',
+            mode: lightMode ? 'light' : 'dark',
         },
-    });
+    });    
+
+    // Input das tarefas
+    const [task, setTask] = useState('');
+    const [taskList, setTaskList] = useState([]);
+    const TaskInputRef = useRef();
+    const addToTaskList = () => {
+        if(task.length) {
+            setTaskList([...taskList, task]);
+            setTask('');
+            alert('Tarefa adicionada!')
+        } else {
+            alert('Insira alguma tarefa!')
+        }
+    }
 
     return(
-        <AuthContext.Provider value={{theme, lightMode, setLightMode}}>
+        <AuthContext.Provider value={{theme, lightMode, setLightMode, task, setTask, addToTaskList, TaskInputRef}}>
             {props.children}
         </AuthContext.Provider>
     )
