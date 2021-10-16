@@ -10,8 +10,8 @@ const TaskInput = () => {
 
     return (
         <Container className={classes.inputContainer} maxWidth="sm">
-            <Grid container maxWidth columnSpacing={1.5}>
-                <Grid item xs={10}>
+            <Grid container spacing={2}>
+                <Grid item xs={9} sm={10}>
                     <TextField
                         label="Insira sua tarefa"
                         variant="outlined"                
@@ -23,7 +23,7 @@ const TaskInput = () => {
                     />
                 </Grid>
 
-                <Grid item xs={2}>
+                <Grid item xs={3} sm={2}>
                     <Button 
                         variant="outlined" 
                         color="secondary" 
@@ -33,7 +33,7 @@ const TaskInput = () => {
                         Add
                     </Button>
                 </Grid>
-            </Grid>
+            </Grid>            
         </Container>
     )
 }

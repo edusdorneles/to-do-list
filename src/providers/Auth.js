@@ -10,7 +10,7 @@ export const AuthProvider = (props) => {
         palette: {
             mode: lightMode ? 'light' : 'dark',
         },
-    });    
+    });        
 
     // Input das tarefas
     const [task, setTask] = useState('');
@@ -18,16 +18,16 @@ export const AuthProvider = (props) => {
     const TaskInputRef = useRef();
     const addToTaskList = () => {
         if(task.length) {
-            setTaskList([...taskList, task]);
-            setTask('');
-            alert('Tarefa adicionada!')
+            setTaskList([...taskList, {checked: false, taskName: task}]);
+            setTask('');            
         } else {
-            alert('Insira alguma tarefa!')
+            alert('Insira alguma tarefa!');
         }
     }
 
+    
     return(
-        <AuthContext.Provider value={{theme, lightMode, setLightMode, task, setTask, addToTaskList, TaskInputRef}}>
+        <AuthContext.Provider value={{theme, lightMode, setLightMode, task, setTask, addToTaskList, TaskInputRef, taskList}}>
             {props.children}
         </AuthContext.Provider>
     )

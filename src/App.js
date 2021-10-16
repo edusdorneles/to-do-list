@@ -3,6 +3,7 @@ import { useAuth } from './providers/Auth';
 import { ThemeProvider, Box } from '@material-ui/core';
 import Header from './components/Header/Header';
 import TaskInput from './components/TaskInput/TaskInput';
+import TaskContainer from './components/TaskContainer/TaskContainer';
 
 import './App.css';
 
@@ -15,6 +16,8 @@ function App() {
         <Header />
         
         <TaskInput />
+
+        <TaskContainer />
       </Box>
     </ThemeProvider>
   );
