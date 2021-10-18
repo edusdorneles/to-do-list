@@ -25,6 +25,10 @@ export const AuthProvider = (props) => {
         }
     }
 
+    // Remover tarefa    
+    const removeTask = () => {
+        
+    }
     
     return(
         <AuthContext.Provider value={{theme, lightMode, setLightMode, task, setTask, addToTaskList, TaskInputRef, taskList}}>

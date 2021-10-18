@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
-import { Box, Checkbox } from '@material-ui/core';
+import { Box, Checkbox, IconButton } from '@material-ui/core';
+
+import CloseIcon from '@material-ui/icons/Close';
 
 import useStyles from './styles';
 
@@ -15,6 +17,10 @@ const Task = ({ task }) => {
             />
 
             { <p className={(isChecked ? classes.taskChecked : 'none')}>{task.taskName}</p> }
+
+            <IconButton size="small" className={classes.taskRemove}>
+                <CloseIcon fontSize="medium" />
+            </IconButton>
         </Box>
     )
 }
