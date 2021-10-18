@@ -15,23 +15,32 @@ export const AuthProvider = (props) => {
     // Input das tarefas
     const [task, setTask] = useState('');
     const [taskList, setTaskList] = useState([]);
+    const [taskId, setTaskId] = useState(0);
     const TaskInputRef = useRef();
     const addToTaskList = () => {
-        if(task.length) {
-            setTaskList([...taskList, {checked: false, taskName: task}]);
-            setTask('');            
+        if(task.length) {            
+            setTaskList([...taskList, {taskName: task}]);
+            setTask('');
+            setTaskId(taskId + 1);
         } else {
             alert('Insira alguma tarefa!');
         }
     }
 
-    // Remover tarefa    
-    const removeTask = () => {
+    // Remover tarefa
+    const removeTask = (task) => {
+        const index = taskList.indexOf(task);
         
+        if(index >= 0) {
+            taskList.splice(index, 1);
+            setTaskList([...taskList]);            
+        } else {
+            alert('Erro!');
+        }
     }
     
     return(
-        <AuthContext.Provider value={{theme, lightMode, setLightMode, task, setTask, addToTaskList, TaskInputRef, taskList}}>
+        <AuthContext.Provider value={{theme, lightMode, setLightMode, task, setTask, addToTaskList, TaskInputRef, taskList, removeTask}}>
             {props.children}
         </AuthContext.Provider>
     )
