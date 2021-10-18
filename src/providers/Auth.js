@@ -33,7 +33,7 @@ export const AuthProvider = (props) => {
         
         if(index >= 0) {
             taskList.splice(index, 1);
-            setTaskList([...taskList]);            
+            setTaskList([...taskList]);
         } else {
             alert('Erro!');
         }

@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Box, Checkbox, IconButton } from '@material-ui/core';
+import React from 'react'
+import { Box, IconButton } from '@material-ui/core';
 import { useAuth } from '../../../providers/Auth';
 
 import CloseIcon from '@material-ui/icons/Close';
@@ -10,16 +10,9 @@ const Task = ({ task }) => {
     const classes = useStyles();
     const { removeTask } = useAuth();
 
-    const [isChecked, setIsChecked] = useState(task.checked);    
-
     return (
         <Box className={classes.taskBox}>
-            <Checkbox 
-                checked={isChecked}
-                onChange={(e) => {setIsChecked(e.target.checked)}}                
-            />
-
-            { <p className={(isChecked ? classes.taskChecked : 'none')}>{task.taskName}</p> }
+            { <p>{task.taskName}</p> }
 
             <IconButton onClick={() => {removeTask(task)}} size="small" className={classes.taskRemove}>
                 <CloseIcon fontSize="medium" />

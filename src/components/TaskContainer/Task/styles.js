@@ -5,10 +5,7 @@ export default makeStyles({
         display: 'flex',        
         alignItems: 'center',
         position: 'relative',
-    },
-
-    taskChecked: {
-        textDecoration: 'line-through',
+        padding: '10px 0px 10px 6px'
     },
 
     taskRemove: {
