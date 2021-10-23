@@ -10,11 +10,11 @@
 <p>
 
 ---
-<a href="https://hardcore-fermat-ec7116.netlify.app/" target="_blank">
+<a href="https://to-do-list-dududornelees.netlify.app/" target="_blank">
     <img alt="To do List GIF" title="To do List GIF" src="./github/ToDoList.gif" width="100%" />    
 </a>
 
-<p align="center">Clique <a href="https://hardcore-fermat-ec7116.netlify.app/" target="_blank">aqui</a> para abrir o site da aplicação!</p>
+<p align="center">Clique <a href="https://to-do-list-dududornelees.netlify.app/" target="_blank">aqui</a> para abrir o site da aplicação!</p>
 
 
 
@@ -48,7 +48,6 @@ $ yarn start
 As seguintes ferramentas foram utilizadas na construção deste projeto:
 
 - [React](https://pt-br.reactjs.org/)
-- [Context API](https://pt-br.reactjs.org/docs/context.html)
 - [Material UI](https://mui.com/pt/)
 
 
