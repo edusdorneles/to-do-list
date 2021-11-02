@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { createTheme } from '@material-ui/core';
 
 export const AuthContext = React.createContext({});
@@ -14,7 +14,14 @@ export const AuthProvider = (props) => {
 
     // Input das tarefas
     const [task, setTask] = useState('');
-    const [taskList, setTaskList] = useState([]);
+
+    // Lista de tarefas com localStorage
+    const [taskList, setTaskList] = useState(
+        localStorage.getItem('taskList')
+        ? JSON.parse(localStorage.getItem('taskList'))
+        : []
+    );
+
     const [taskId, setTaskId] = useState(0);
     const TaskInputRef = useRef();
     const addToTaskList = () => {
@@ -25,7 +32,7 @@ export const AuthProvider = (props) => {
         } else {
             alert('Insira alguma tarefa!');
         }
-    }
+    }    
 
     // Remover tarefa
     const removeTask = (task) => {
@@ -38,6 +45,11 @@ export const AuthProvider = (props) => {
             alert('Erro!');
         }
     }
+
+    useEffect(() => {
+        localStorage.setItem('taskList', JSON.stringify(taskList));
+    }, [taskList]);
+
     
     return(
         <AuthContext.Provider value={{theme, lightMode, setLightMode, task, setTask, addToTaskList, TaskInputRef, taskList, removeTask}}>
