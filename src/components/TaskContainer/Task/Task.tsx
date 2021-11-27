@@ -1,14 +1,22 @@
-import React from 'react'
 import { Box, IconButton } from '@material-ui/core';
-import { useAuth } from '../../../providers/Auth';
+import { useGlobal } from 'providers/Global';
 
-import CloseIcon from '@material-ui/icons/Close';
-
+// Styles
 import useStyles from './styles';
 
-const Task = ({ task }) => {    
+// Icons
+import CloseIcon from '@material-ui/icons/Close';
+
+// Interfaces
+interface IProps {
+    key: number;
+    task: any;
+}
+
+
+const Task: React.FC<IProps> = ({ task }) => {
     const classes = useStyles();
-    const { removeTask } = useAuth();
+    const { removeTask } = useGlobal();
 
     return (
         <Box className={classes.taskBox}>

@@ -1,15 +1,16 @@
-import React from 'react'
 import { Paper, Container, IconButton } from '@material-ui/core';
-import { useAuth } from '../../providers/Auth';
+import { useGlobal } from 'providers/Global';
 
+// Styles
+import useStyles from './styles';
+
+// Icons
 import NightsStayIcon from '@material-ui/icons/NightsStay';
 import WbSunnyIcon from '@material-ui/icons/WbSunny';
 
-import useStyles from './styles';
 
-const Header = () => {
-    const { lightMode, setLightMode } = useAuth();
-
+const Header: React.FC = () => {
+    const { lightMode, setLightMode } = useGlobal();
     const classes = useStyles();
 
     return (
@@ -20,7 +21,7 @@ const Header = () => {
                     
                     <IconButton onClick={() => {setLightMode(!lightMode)}} size="small">
                         { lightMode ? <NightsStayIcon fontSize="medium" /> : <WbSunnyIcon fontSize="medium" /> }
-                    </IconButton>                    
+                    </IconButton>
                 </Container>
             </Paper>
         </header>

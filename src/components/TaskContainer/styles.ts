@@ -7,5 +7,9 @@ export default makeStyles({
 
     taskPaper: {
         padding: '10px',
+    },
+
+    taskEmpty: {
+        textAlign: 'center',
     }
 });

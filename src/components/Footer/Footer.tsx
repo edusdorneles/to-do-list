@@ -1,9 +1,9 @@
-import React from 'react'
 import { Paper } from '@material-ui/core';
 
+// Styles
 import useStyles from './styles';
 
-const Footer = () => {
+const Footer: React.FC = () => {
     const classes = useStyles();
 
     return (

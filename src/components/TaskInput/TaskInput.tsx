@@ -1,11 +1,12 @@
-import React from 'react'
 import { Container, Grid, TextField, Button } from '@material-ui/core';
-import { useAuth } from '../../providers/Auth';
+import { useGlobal } from 'providers/Global';
 
+// Styles
 import useStyles from './styles';
 
-const TaskInput = () => {
-    const { task, setTask, addToTaskList, TaskInputRef } = useAuth();
+
+const TaskInput: React.FC = () => {
+    const { task, setTask, addToTaskList, TaskInputRef } = useGlobal();
     const classes = useStyles();
 
     return (

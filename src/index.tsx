@@ -1,11 +1,10 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { AuthProvider } from './providers/Auth';
+import { GlobalProvider } from 'providers/Global';
 
 ReactDOM.render(
-  <AuthProvider>
+  <GlobalProvider>
     <App />
-  </AuthProvider>,
+  </GlobalProvider>,
   document.getElementById('root')
 );
